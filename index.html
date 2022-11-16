@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+</head>
+<body>
+  <script>
+    // console.log is used to print out text in the developer console inside the browser
+    // mathematics in JS operate with PEMDAS
+    console.log("Hello World")
+    
+    const myInt = 5;
+    
+    const myFloat = 6.667;
+    console.log(typeof myInt)
+    console.log(typeof myFloat)
+    //round number to fixed number of decimal places use toFixed() method
+    
+    const lotsOfDecimal = 1.289989734;
+    lotsOfDecimal;
+    
+    const twoDecimalPlaces = lotsOfDecimal.toFixed(2);
+    twoDecimalPlaces;
+    console.log(twoDecimalPlaces);
+    console.log(27+283);
+    
+    const sixDigitAdd = 3 + 45 + 228 -127 * 34 / 16;
+    console.log(sixDigitAdd);
+    console.log((4+6+9) / 77);
+    
+    let a = 10;
+    console.log(a);
+    console.log(9 * a);
+    
+    let b = 7 * a;
+    console.log(b)
+
+    const max = 57;
+    
+    const actual  = max - 13;
+    
+    const percentage = actual / max;
+    
+    console.log(percentage)
+
+    //strings in javascript
+
+    const string = "The revolution will not be televised.";
+    console.log(string)
+
+    //single and double quotes can both be used, however word quotations may need Character Escapes in order to prevent error.
+
+    const bigMouth = 'I\'ve got no right to take my place...';
+    console.log(bigMouth)
+
+    // the \ backslash is what separates the character from the quote
+
+    const name = "Jessi";
+    const greeting = `Hello, ${name}`
+    console.log(greeting)
+
+    // make sure to use  `` backticks not quotes when concatenating string values.
+
+    const one = "Hello "
+    const two = "How are You?"
+    const joined = `${one}${two}`
+    console.log(joined)
+
+    //if below function returns an error "Cannot read property 'addEventListener' of null"
+
+    window.onload=function(){
+
+      //use the code above "window.onload=function(){}"
+
+    const button = document.querySelector("button")
+
+    function greet() {
+      const name = prompt("What is your name?");
+      alert(`Hello ${name}, nice to see you!`);
+    }
+
+    button.addEventListener("click", greet);
+  }
+
+  //last left off at Conditionals TOP
+
+  </script>
+
+  <button>Press Me</button>
+</body>
+</html>
