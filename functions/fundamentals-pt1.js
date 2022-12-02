@@ -27,8 +27,8 @@ let ohp = "HellO AgaiN";
 
 function capitalizeFirstLetter(nor) {
     return nor.charAt(0).toUpperCase() + nor.slice(1).toLowerCase();
-}           // Cap first letter             lower remainder 
-                        // (0) index identifiers (1)
+}         
+
 function capitalizeFirstLetter(cam) {
     return cam.charAt(0).toUpperCase() + cam.slice(1).toLowerCase();
 }
