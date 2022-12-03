@@ -39,6 +39,38 @@ function capitalizeFirstLetter(ohp) {
 
         // function identifies string, returns value with first letter capitalized, then cuts the string back together with the remainder set to lowerCase
 
+let last = "wxyz"
+
+let only = last.slice(-1)
+
 console.log (capitalizeFirstLetter(nor)); // Hello!
 console.log (capitalizeFirstLetter(cam)); // Goodbye
 console.log (capitalizeFirstLetter(ohp)); // Helloagain
+
+console.log (only);
+
+let firstName = "Jessi ";
+
+let lastName = "Frost ";
+
+const me = firstName + lastName;
+
+console.log("Hello! again " + me)
+
+function title(firstName) {
+    return firstName.charAt(0).toLowerCase() + firstName.slice(1).toUpperCase();
+}
+
+    //if function does not return desired value, be sure to inpsect and make sure the console.log is selecting both the function and the string attached in the parameters
+
+console.log(title(firstName));
+
+let company = "from Allstate";
+
+function title2(me) {
+    return me.charAt(0).toLowerCase() + me.slice(1).toLowerCase();
+}
+
+console.log(title2(me)+ company);
+
+
