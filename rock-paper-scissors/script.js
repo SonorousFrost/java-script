@@ -11,18 +11,12 @@ function computerSelection() {
     return randomSelect;
 };
 
-// console.log(randomSelect);  // test output
-
-
 function playerSelection() {
     var selection = prompt("Rock, Paper or Scissors?").toLowerCase();
 
     if(selection == rock) {
-        //console.log(randomSelect);
-    }   else if(selection == paper) {
-        //console.log(randomSelect);              // Player Input Function
+    }   else if(selection == paper) {             // Player Input Function
     }   else if(selection == scissors) {
-        //console.log(randomSelect);
     }   else {
         console.log("Please choose either Rock, Paper or Scissors!");
     }
@@ -30,8 +24,8 @@ function playerSelection() {
 }
 
 const draw = "Draw";
-const win = "You Win!";
-const lose = "You Lose!";
+const win = "Win!";
+const lose = "Lose!";
 
 function playRound(playerSelection, computerSelection) {
     var round = playerSelection() + computerSelection();
@@ -66,7 +60,6 @@ function playRound(playerSelection, computerSelection) {
         console.log(win + winScissors);
         addPlayerScore();
     }
-    return round;
 }
 
 var playerScoreInfo = "You have ";
@@ -75,40 +68,40 @@ var playerScore = 0;
 var comScore = 0;
 
 function addPlayerScore() {
-    var playerScoreBoard = playerScoreInfo + (playerScore + 1) + " Points!";
-    console.log(playerScoreBoard);
+    var playerScoreBoard = playerScoreInfo + (playerScore += 1) + " Points!";
     return playerScoreBoard;
 }
 
 function addComScore() {
-    var comScoreBoard = comScoreInfo + (comScore + 1) + " Points!";
-    console.log(comScoreBoard);
+    var comScoreBoard = comScoreInfo + (comScore += 1) + " Points!";
     return comScoreBoard;
 }
 
 const totalRounds = 5;
 
-for (let i = 0; i < totalRounds; i++) {
-    console.log(playRound(playerSelection, computerSelection) )
-    if (i === 0) {
-        console.log("Round 1");
-    } else if (i === 1) {
-        console.log("Round 2");
-    } else if (i === 2) {
-        console.log("Round 3");
-    } else if (i === 3) {
-        console.log("Round 4");
-    } else if (i === 4) {
-        console.log("Round 5")
-    } else if (i === 5) {
-        winner();
+function game() {
+    for (let i = 0; i < totalRounds; i++) {
+        console.log(playRound(playerSelection, computerSelection, addPlayerScore, addComScore))
+        if (i === 0) {
+        } else if (i === 1) {
+        } else if (i === 2) {
+        } else if (i === 3) {
+        } else if (i === 4) {
+            scoreBoard();
+        } 
+    }
+} 
+
+function scoreBoard() {
+    if (playerScore > comScore ) {
+        console.log("You Win!");
+        console.log(" With... " + playerScore + " Points!")
+        return;
+    } else if (comScore > playerScore) {
+        console.log("Computer Wins...");
+        console.log(" With... " + comScore + " Points </3")
+        return;
     }
 }
 
-function winner() {
-    if (playerScore < comScore){
-    console.log("You Lose!");
-    } else if (comScore < playerScore){
-    console.log("You Win!")
-    }
-}
+console.log(game(scoreBoard));
