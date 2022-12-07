@@ -52,7 +52,7 @@ function playRound(playerSelection, computerSelection) {
     } else if (round == paper + scissors) {
         var losePaper = " Scissors beats Paper!";
         console.log(lose + losePaper);
-        addComScore();
+        addComScore();   
     } else if (round == paper + rock) {
         var winPaper = " Paper beats Rock!";
         console.log(win + winPaper);
@@ -66,7 +66,7 @@ function playRound(playerSelection, computerSelection) {
         console.log(win + winScissors);
         addPlayerScore();
     }
-    // return round;
+    return round;
 }
 
 var playerScoreInfo = "You have ";
@@ -77,16 +77,38 @@ var comScore = 0;
 function addPlayerScore() {
     var playerScoreBoard = playerScoreInfo + (playerScore + 1) + " Points!";
     console.log(playerScoreBoard);
+    return playerScoreBoard;
 }
 
 function addComScore() {
     var comScoreBoard = comScoreInfo + (comScore + 1) + " Points!";
     console.log(comScoreBoard);
+    return comScoreBoard;
 }
 
-function game(playRound) {
-    for (let playRound = 0; playRound < 5; playRound++){
-    }   console.log(playRound);
+const totalRounds = 5;
+
+for (let i = 0; i < totalRounds; i++) {
+    console.log(playRound(playerSelection, computerSelection) )
+    if (i === 0) {
+        console.log("Round 1");
+    } else if (i === 1) {
+        console.log("Round 2");
+    } else if (i === 2) {
+        console.log("Round 3");
+    } else if (i === 3) {
+        console.log("Round 4");
+    } else if (i === 4) {
+        console.log("Round 5")
+    } else if (i === 5) {
+        winner();
+    }
 }
 
-console.log(playRound(playerSelection, computerSelection, game));
+function winner() {
+    if (playerScore < comScore){
+    console.log("You Lose!");
+    } else if (comScore < playerScore){
+    console.log("You Win!")
+    }
+}
