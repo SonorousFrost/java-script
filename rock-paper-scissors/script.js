@@ -29,27 +29,64 @@ function playerSelection() {
     return selection;
 }
 
+const draw = "Draw";
+const win = "You Win!";
+const lose = "You Lose!";
+
 function playRound(playerSelection, computerSelection) {
     var round = playerSelection() + computerSelection();
     if(round == rock + rock) {
-        console.log("Draw!");               // Game round function
+        console.log(draw)             // Game round function
     } else if (round == paper + paper) {
-        console.log("Draw!");
+        console.log(draw);
     } else if (round == scissors + scissors) {
-        console.log("Draw!");
-    } else if (round == rock + scissors) {
-        console.log("You win! Rock beats Scissors!");
+        console.log(draw);
     } else if (round == scissors + rock) {
-        console.log("You lose! Rock beats Scissors!");
+        var loseScissors = " Rock beats Scissors!";
+        console.log(lose + loseScissors);
+        addComScore();  
     } else if (round == rock + paper) {
-        console.log("You lose! Paper beats Rock!");
-    } else if (round == paper + rock) {
-        console.log("You win! Paper beats Rock!");
+        var loseRock = " Paper beats Rock!";
+        console.log(lose + loseRock);
+        addComScore();
     } else if (round == paper + scissors) {
-        console.log("You lose! Scissors beats Paper!");
+        var losePaper = " Scissors beats Paper!";
+        console.log(lose + losePaper);
+        addComScore();
+    } else if (round == paper + rock) {
+        var winPaper = " Paper beats Rock!";
+        console.log(win + winPaper);
+        addPlayerScore();
+    } else if (round == rock + scissors) {
+        var winRock = " Rock beats Scissors!";
+        console.log(win + winRock);
+        addPlayerScore();
     } else if (round == scissors + paper) {
-        console.log("You win! Scissors beats Paper!");
+        var winScissors = " Scissors beats Paper!";
+        console.log(win + winScissors);
+        addPlayerScore();
     }
     // return round;
 }
-console.log(playRound(playerSelection, computerSelection));
+
+var playerScoreInfo = "You have ";
+var comScoreInfo = "Com has ";
+var playerScore = 0;
+var comScore = 0;
+
+function addPlayerScore() {
+    var playerScoreBoard = playerScoreInfo + (playerScore + 1) + " Points!";
+    console.log(playerScoreBoard);
+}
+
+function addComScore() {
+    var comScoreBoard = comScoreInfo + (comScore + 1) + " Points!";
+    console.log(comScoreBoard);
+}
+
+function game(playRound) {
+    for (let playRound = 0; playRound < 5; playRound++){
+    }   console.log(playRound);
+}
+
+console.log(playRound(playerSelection, computerSelection, game));
